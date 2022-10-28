@@ -1,23 +1,26 @@
-document.querySelector("#eraser").addEventListener("click", () => {
-    document.querySelector("#groceryItems").textContent = "";
+const grocerices = document.getElementsByClassName("groceries")[0];
+const eraser = document.getElementById("eraser");
+const allIteam = document.getElementById("allIteam");
+const userInput = document.getElementById("userInput")
+
+eraser.addEventListener("click", function() {
+    allIteam.innerHTML = '';
 })
 
-document.querySelector("#userInput").addEventListener("keydown", (event) => {
-    if (event.key == "Enter")
-        addItem();
-});
+userInput.addEventListener("keydown", function(event) {
+    if (event.key == Enter)
+        addIteam();
+})
 
-addItem = () => {
-    const item = document.createElement("h2")
-    item.textContent = "- " + document.querySelector("#userInput").value;
+function addIteam() {
+    var h2 = document.createElement('h2');
+    h2.innerHTML = "- " + userInput.value;
 
-    item.addEventListener("click", () => {
-        if (item.style.textDecoration != "line-through")
-            item.style.textDecoration = "line-through";
-        else
-            item.style.textDecoration = "none";
+    h2.addEventListener("click", function() {
+        h2.style.textDecoration = "line-through";
+
+        allIteam.insertAdjacentElement("beforeend", h2);
+
+
     })
-
-    document.querySelector("#groceryItems").appendChild(item);
-    document.querySelector("#userInput").value = "";
 }
