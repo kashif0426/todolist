@@ -1,18 +1,23 @@
-const grocerices = document.getElementsByClassName("groceries")[0];
-const eraser = document.getElementById("eraser");
-const allIteam = document.getElementById("allIteam");
-const userInput = document.getElementById("userInput")
-eraser.addEventListener("click", function() {
-    allIteam.innerHTML = '';
+document.querySelector("#eraser").addEventListener("click", () => {
+    document.querySelector("#groceryItems").textContent = "";
 })
 
-userInput.addEventListener("keydown", function(event) {
-    if (event.key == Enter)
-        addIteam();
-})
+document.querySelector("#userInput").addEventListener("keydown", (event) => {
+    if (event.key == "Enter")
+        addItem();
+});
 
-function addIteam() {
-    var h2 = document.createElement('h2');
-    h2.innerHTML = "- " + userInput.value;
+addItem = () => {
+    const item = document.createElement("h2")
+    item.textContent = "- " + document.querySelector("#userInput").value;
 
+    item.addEventListener("click", () => {
+        if (item.style.textDecoration != "line-through")
+            item.style.textDecoration = "line-through";
+        else
+            item.style.textDecoration = "none";
+    })
+
+    document.querySelector("#groceryItems").appendChild(item);
+    document.querySelector("#userInput").value = "";
 }
