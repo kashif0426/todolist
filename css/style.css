@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-color: orange;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.groceries {
+    width: 600px;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+    box-shadow: 10px 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.groceries h1 {
+    font-size: 2.5rem;
+    margin-top: 1em;
+}
+
+.groceries i {
+    font-size: 2rem;
+    color: pink;
+}
+
+.groceries input {
+    font-family: 'Fuzzy Bubbles', cursive;
+    outline: 0;
+    border: 0;
+    border-bottom: 3px solid gainsboro;
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+#allIteam h2 {
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+@media(max-width:480px) {
+    .groceries h1 {
+        font-size: 2rem;
+    }
+    .groceries i {
+        font-size: 1.5rem;
+    }
+    .groceries input {
+        font-size: 1rem;
+    }
+    #allIteam h2 {
+        margin-left: 25px;
+        font-size: 1.5rem;
+    }
+}
